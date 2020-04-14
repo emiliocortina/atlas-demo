@@ -7,19 +7,26 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "ng build --prod --output-path docs --base-href \"/atlas-demo/\" && cp ./docs/index.html ./docs/404.html"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~9.0.5",
+    "@angular/animations": "^9.0.7",
+    "@angular/cdk": "^9.2.0",
     "@angular/common": "~9.0.5",
     "@angular/compiler": "~9.0.5",
     "@angular/core": "~9.0.5",
     "@angular/forms": "~9.0.5",
+    "@angular/material": "^9.2.0",
     "@angular/platform-browser": "~9.0.5",
     "@angular/platform-browser-dynamic": "~9.0.5",
     "@angular/router": "~9.0.5",
+    "@tweenjs/tween.js": "^18.5.0",
+    "dat.gui": "^0.7.7",
+    "phoenix-library": "0.0.14",
     "rxjs": "~6.5.4",
+    "three": "^0.115.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },

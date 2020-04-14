@@ -2,26 +2,48 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.5.
 
-## Development server
+Here is a guide on how to use Phoenix Library for building an event display application.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Create an Angular application
+[Set up the environment](https://github.com/emiliocortina/atlas-demo.git) and create a default angular application with
 
-## Code scaffolding
+    ng new app-name --style=scss --routing=true
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Install library dependencies
 
-## Build
+    npm i three dat.gui @tweenjs/tween.js @angular/animations @angular/cdk @angular/material
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Install Phoenix library
 
-## Running unit tests
+    npm i phoenix-library
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Import Phoenix Library
 
-## Running end-to-end tests
+In your src/app/app.module.ts, at the top add the following import:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+    import {PhoenixLibraryModule} from 'phoenix-library';
 
-## Further help
+And add that module to the imports array declarations:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        PhoenixLibraryModule
+    ]
+
+## Import Phoenix styles
+
+In your src/styles.scss, add:
+
+    @import "~phoenix-library/index.scss";
+
+## Use Phoenix components
+
+Now you are all set to use the library components on your app.
+Start by replacing the content of your src/app/app.component.html with the following:
+
+    <phoenix-experiment-info experiment="atlas"></phoenix-experiment-info>
+    <phoenix-ui-menu></phoenix-ui-menu>
+    <phoenix-event-display></phoenix-event-display>
+
+Note that you can remove the experiment-info component if you don't want to display an overlay with the experiment logo.
